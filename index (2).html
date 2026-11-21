@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Doctor Beauty | دكتور بيوتي</title>
+<style>
+:root{--bg:#fff8fa;--card:#fff;--tx:#2b1d24;--mu:#7a6670;--pk:#d6336c;--pk2:#fde3ec;--bd:#f0d9e1;--ok:#1f9d55;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1216;--card:#241a1f;--tx:#f6e9ee;--mu:#b9a3ad;--pk:#ff6b9a;--pk2:#3a2430;--bd:#3a2a32;--ok:#4cc38a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1216;--card:#241a1f;--tx:#f6e9ee;--mu:#b9a3ad;--pk:#ff6b9a;--pk2:#3a2430;--bd:#3a2a32;--ok:#4cc38a;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--bd);padding:10px 14px;display:flex;align-items:center;gap:10px}
+.logo{font-weight:800;font-size:20px;color:var(--pk);white-space:nowrap}.logo small{display:block;font-size:10px;color:var(--mu);font-weight:500}
+#q{flex:1;min-width:0;padding:10px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:15px}
+.cartbtn{position:relative;border:0;background:var(--pk);color:#fff;border-radius:99px;padding:9px 14px;font-size:15px;cursor:pointer}
+.cartbtn b{background:#fff;color:var(--pk);border-radius:99px;padding:0 7px;margin-inline-start:4px;font-size:13px}
+.promo{background:var(--pk);color:#fff;text-align:center;padding:7px;font-size:13px}
+.hero{padding:22px 16px;text-align:center}.hero h1{margin:0 0 6px;font-size:24px}.hero p{margin:0;color:var(--mu)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:4px 14px 12px}
+.cats button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:99px;cursor:pointer;font-size:14px}
+.cats button.on{background:var(--pk);color:#fff;border-color:var(--pk)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;padding:0 14px 24px;max-width:1000px;margin:auto}
+.p{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:10px;display:flex;flex-direction:column}
+.im{height:110px;border-radius:12px;background:var(--pk2);display:flex;align-items:center;justify-content:center;font-size:44px;position:relative}
+.tag{position:absolute;top:6px;inset-inline-start:6px;background:var(--pk);color:#fff;font-size:11px;padding:2px 8px;border-radius:99px}
+.p h3{font-size:14px;margin:8px 0 2px;min-height:40px}.br{font-size:12px;color:var(--mu)}
+.pr{margin:6px 0;font-weight:700}.pr s{color:var(--mu);font-weight:400;font-size:12px;margin-inline-start:6px}
+.add{margin-top:auto;border:1px solid var(--pk);background:transparent;color:var(--pk);padding:8px;border-radius:10px;cursor:pointer;font-size:14px}
+.add:active{background:var(--pk);color:#fff}
+#ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:20}
+#dr{position:fixed;top:0;bottom:0;inset-inline-start:0;width:min(420px,100%);background:var(--bg);z-index:21;display:none;flex-direction:column;padding:calc(14px + env(safe-area-inset-top,0px)) 14px calc(14px + env(safe-area-inset-bottom,0px))}
+#dr.open,#ov.open{display:flex}
+#ov.open{display:block}
+.row{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd);font-size:14px}.row span:first-child{flex:1}
+.qty button{width:28px;height:28px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer}
+#items{flex:1;overflow:auto}
+.f input,.f textarea{width:100%;margin:4px 0;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit}
+.go{width:100%;border:0;background:var(--ok);color:#fff;padding:13px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px}
+.mu{color:var(--mu);font-size:13px}.x{border:0;background:none;color:var(--tx);font-size:22px;cursor:pointer}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:20px 14px 30px;border-top:1px solid var(--bd)}
+</style>
+</head>
+<body>
+<div class="promo">🚚 توصيل لجميع محافظات مصر · الدفع عند الاستلام</div>
+<header>
+<div class="logo">Doctor Beauty<small>دكتور بيوتي</small></div>
+<input id="q" type="search" placeholder="ابحثي عن منتج أو ماركة…">
+<button class="cartbtn" id="cb">🛒<b id="cn">0</b></button>
+</header>
+<section class="hero"><h1>جمالك بإشراف صيدلي 💗</h1><p>منتجات أصلية للعناية بالبشرة والشعر والمكياج</p></section>
+<div class="cats" id="cats"></div>
+<main class="grid" id="grid"></main>
+<footer>© Doctor Beauty (v3) · للطلب والاستفسار واتساب: <span id="ph"></span></footer>
+
+<div id="ov"></div>
+<aside id="dr">
+<div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">سلة المشتريات</h2><button class="x" id="cx">✕</button></div>
+<div id="items"></div>
+<div class="f">
+<div style="display:flex;justify-content:space-between;font-weight:700;margin:8px 0"><span>الإجمالي</span><span id="tot"></span></div>
+<input id="nm" placeholder="الاسم"><input id="tel" type="tel" placeholder="رقم الموبايل"><textarea id="ad" rows="2" placeholder="العنوان بالتفصيل (المحافظة / المدينة)"></textarea>
+<button class="go" id="send">إرسال الطلب على واتساب</button>
+<p class="mu">الدفع عند الاستلام. سنؤكد معك الطلب وسعر الشحن على واتساب.</p>
+<div id="done" style="display:none"><p style="margin:8px 0;font-weight:700">طلبك جاهز ✅ اضغطي على الزرار لإرساله:</p><a id="wa" class="go" style="display:block;text-align:center;text-decoration:none" target="_blank" rel="noopener">فتح واتساب وإرسال الطلب</a><button class="go" id="cp" style="background:var(--pk)">نسخ نص الطلب</button><textarea id="msg" rows="5" readonly></textarea><p class="mu">لو واتساب ما فتحش، انسخي النص وابعتيه على الرقم: <b id="ph2"></b></p></div>
+</div>
+</aside>
+
+<script>
+// ===== عدّل هنا: رقم واتساب (بدون + أو 0 في الأول) والمنتجات =====
+var WHATSAPP = "201123237691";
+var CATS = ["الكل","العناية بالبشرة","الشعر","المكياج","العطور","العناية بالجسم","فيتامينات"];
+var PRODUCTS = [
+ {n:"سيروم نياسيناميد 30 مل",b:"Doctor Beauty",c:"العناية بالبشرة",p:237,o:279,e:"🧴"},
+ {n:"سيروم هيالورونيك أسيد 30 مل",b:"Derma 10",c:"العناية بالبشرة",p:185,o:330,e:"💧"},
+ {n:"غسول وجه للبشرة الدهنية 200 مل",b:"Doctor Beauty",c:"العناية بالبشرة",p:120,e:"🚿"},
+ {n:"واقي شمس SPF50 ‏50 مل",b:"Doctor Beauty",c:"العناية بالبشرة",p:210,o:250,e:"☀️"},
+ {n:"شامبو إكليل الجبل 250 مل",b:"Doctor Beauty",c:"الشعر",p:150,o:200,e:"🌿"},
+ {n:"كريم تصفيف للشعر الجاف 100 مل",b:"Happiness",c:"الشعر",p:150,e:"💆‍♀️"},
+ {n:"ماسك مغذي للشعر 200 مل",b:"Doctor Beauty",c:"الشعر",p:175,o:220,e:"✨"},
+ {n:"تنت شفاه وخدود وردي 7 مل",b:"Doctor Beauty",c:"المكياج",p:75,o:89,e:"💄"},
+ {n:"ماسكارا مكثفة",b:"Sheglam",c:"المكياج",p:160,e:"👁️"},
+ {n:"بادي سبلاش فانيليا 120 مل",b:"Artmed",c:"العطور",p:135,o:185,e:"🌸"},
+ {n:"عطر مسك نظيف 50 مل",b:"Artmed",c:"العطور",p:450,e:"🧼"},
+ {n:"لوشن مرطب للجسم 250 مل",b:"Eva",c:"العناية بالجسم",p:95,e:"🧴"},
+ {n:"مرطب شفاه بالفراولة",b:"Doctor Beauty",c:"العناية بالجسم",p:50,o:59,e:"🍓"},
+ {n:"فيتامين للبشرة والشعر والأظافر",b:"Limitless",c:"فيتامينات",p:290,e:"💊"},
+ {n:"أوميجا 3 (60 كبسولة)",b:"Limitless",c:"فيتامينات",p:450,e:"🐟"}
+];
+// ==============================================================
+var cat="الكل",term="",cart={};
+try{var s=localStorage.getItem("db_cart");if(s)cart=JSON.parse(s)||{}}catch(e){}
+var $=function(i){return document.getElementById(i)};
+function save(){try{localStorage.setItem("db_cart",JSON.stringify(cart))}catch(e){}}
+function egp(n){return n.toLocaleString("ar-EG")+" ج.م"}
+function drawCats(){$("cats").innerHTML=CATS.map(function(c){return '<button class="'+(c===cat?"on":"")+'" data-c="'+c+'">'+c+'</button>'}).join("")}
+function drawGrid(){
+ var l=PRODUCTS.map(function(p,i){p.i=i;return p}).filter(function(p){return(cat==="الكل"||p.c===cat)&&(p.n+" "+p.b).toLowerCase().indexOf(term)>-1});
+ $("grid").innerHTML=l.length?l.map(function(p){
+  var off=p.o?'<span class="tag">-'+Math.round((1-p.p/p.o)*100)+'%</span>':"";
+  return '<div class="p"><div class="im">'+off+p.e+'</div><h3>'+p.n+'</h3><div class="br">'+p.b+'</div><div class="pr">'+egp(p.p)+(p.o?'<s>'+egp(p.o)+'</s>':"")+'</div><button class="add" data-a="'+p.i+'">أضف للسلة</button></div>'}).join(""):'<p class="mu">لا توجد نتائج</p>'}
+function drawCart(){
+ var k=Object.keys(cart),t=0,n=0;
+ $("items").innerHTML=k.length?k.map(function(i){var p=PRODUCTS[i],q=cart[i];t+=p.p*q;n+=q;
+  return '<div class="row"><span>'+p.n+'<br><span class="mu">'+egp(p.p)+'</span></span><span class="qty"><button data-m="'+i+'">−</button> '+q+' <button data-pl="'+i+'">+</button></span></div>'}).join(""):'<p class="mu">السلة فارغة</p>';
+ $("cn").textContent=n;$("tot").textContent=egp(t);save()}
+function showCart(v){$("dr").classList.toggle("open",v);$("ov").classList.toggle("open",v)}
+document.addEventListener("click",function(e){
+ var t=e.target,d=t.dataset;
+ if(d.c){cat=d.c;drawCats();drawGrid()}
+ if(d.a!==undefined){cart[d.a]=(cart[d.a]||0)+1;drawCart()}
+ if(d.pl!==undefined){cart[d.pl]++;drawCart()}
+ if(d.m!==undefined){if(--cart[d.m]<=0)delete cart[d.m];drawCart()}
+});
+$("q").addEventListener("input",function(e){term=e.target.value.trim().toLowerCase();drawGrid()});
+$("cb").onclick=function(){showCart(true)};$("cx").onclick=$("ov").onclick=function(){showCart(false)};
+$("send").onclick=function(){
+ var k=Object.keys(cart);if(!k.length){alert("السلة فارغة");return}
+ var nm=$("nm").value.trim(),tel=$("tel").value.trim(),ad=$("ad").value.trim();
+ if(!nm||!tel||!ad){alert("من فضلك اكتبي الاسم ورقم الموبايل والعنوان");return}
+ var t=0,m="طلب جديد من متجر Doctor Beauty 💗\n\n";
+ k.forEach(function(i){var p=PRODUCTS[i];t+=p.p*cart[i];m+="• "+p.n+" × "+cart[i]+" = "+p.p*cart[i]+" ج.م\n"});
+ m+="\nالإجمالي: "+t+" ج.م (غير شامل الشحن)\nالاسم: "+nm+"\nالموبايل: "+tel+"\nالعنوان: "+ad+"\nالدفع: عند الاستلام";
+ $("msg").value=m;
+ $("wa").href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(m);
+ $("ph2").textContent="0"+WHATSAPP.slice(2);
+ $("done").style.display="block";
+ $("done").scrollIntoView({behavior:"smooth",block:"center"})};
+$("cp").onclick=function(){
+ var t=$("msg");t.select();
+ try{navigator.clipboard.writeText(t.value)}catch(e){document.execCommand("copy")}
+ $("cp").textContent="تم النسخ ✅"};
+$("ph").textContent="+"+WHATSAPP;
+drawCats();drawGrid();drawCart();
+</script>
+</body>
+</html>
